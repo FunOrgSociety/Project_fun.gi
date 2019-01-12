@@ -21,8 +21,8 @@ namespace WindowsFormsApp2
             Application.Run(new LoginForm());
 
             dbClass database = new dbClass();
+            dbClass.otvoriKonekciju();
 
-            
         }
     }
 }
