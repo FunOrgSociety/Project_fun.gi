@@ -8,10 +8,12 @@ namespace WindowsFormsApp2
 {
     class userClass
     {
-        public string username;
-        public string password;
-        public string firstname;
-        public string lastname;
-        public string email;
+        public string username { get; set; }
+        public string password { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string email { get; set; }
+        public int id { get; set; }
     }
+
 }

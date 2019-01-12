@@ -23,5 +23,10 @@ namespace WindowsFormsApp2
             this.Hide();
             Home.ShowDialog();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

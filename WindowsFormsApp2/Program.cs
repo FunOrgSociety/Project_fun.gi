@@ -17,6 +17,8 @@ namespace WindowsFormsApp2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
+
+            dbClass database = new dbClass
         }
     }
 }
