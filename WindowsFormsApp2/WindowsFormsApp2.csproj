@@ -102,7 +102,6 @@
     <Compile Include="SavjetiForm.Designer.cs">
       <DependentUpon>SavjetiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLite.cs" />
     <Compile Include="userClass.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

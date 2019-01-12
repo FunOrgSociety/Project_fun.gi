@@ -9,9 +9,9 @@ namespace WindowsFormsApp2
     class GljivaClass
     {
         public int id { get; set; }
-        public string ime { get; set; }
+        public string naziv { get; set; }
         public bool jestiva { get; set; }
-        public string karakteristika { get; set; }
+        public string opis { get; set; }
         public bool pronadena { get; set; }
         public enum Boja { zuta, zelena, crna, bijela, crvena, narancasta, smeda, siva, krem, maslinasta };
         public enum Vrijeme_branja { jesen, ljeto, proljece, zima, cijela_godina }; 
