@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace WindowsFormsApp2
 {
@@ -18,7 +19,7 @@ namespace WindowsFormsApp2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
 
-            dbClass database = new dbClass
+            
         }
     }
 }
