@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace WindowsFormsApp2
 {
@@ -230,6 +231,8 @@ namespace WindowsFormsApp2
             RegisterForm Register = new RegisterForm();
             this.Hide();
             Register.ShowDialog();
+            dbClass database = new dbClass();
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)

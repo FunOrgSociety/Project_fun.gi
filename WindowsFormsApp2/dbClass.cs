@@ -10,7 +10,7 @@ namespace WindowsFormsApp2
 {
     class dbClass
     {
-        private static string connectionString = "URI=file:database.db";
+        private static string connectionString = "URI=file:database.db3";
 
         internal static SQLiteConnection konekcija = new SQLiteConnection(connectionString);
 
@@ -21,7 +21,8 @@ namespace WindowsFormsApp2
             var cmd = konekcija.CreateCommand();
 
 
-            cmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	User(id integer,  ime varchar(20) , prezime varchar(20) , username varchar(20) , password varchar(20))";
+            cmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	User(id integer,ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+
             cmd.ExecuteNonQuery();
 
             cmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
@@ -29,12 +30,12 @@ namespace WindowsFormsApp2
                                          pronadena boolean)";
 
             cmd.ExecuteNonQuery();
+            }
 
-        }
-
-        public static void zatvoriKonekciju()
-        {
+            public static void zatvoriKonekciju()
+         {
             konekcija.Close();
+
         }
 
 

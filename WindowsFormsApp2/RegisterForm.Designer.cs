@@ -73,6 +73,7 @@
             this.label7.Size = new System.Drawing.Size(112, 18);
             this.label7.TabIndex = 35;
             this.label7.Text = "invalid password";
+            this.label7.Visible = false;
             // 
             // pictureBox1
             // 
@@ -107,6 +108,7 @@
             this.button1.TabIndex = 32;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -189,7 +191,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox5.Location = new System.Drawing.Point(186, 252);
+            this.textBox5.Location = new System.Drawing.Point(186, 292);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(143, 26);
             this.textBox5.TabIndex = 24;
@@ -197,10 +199,11 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(186, 292);
+            this.textBox4.Location = new System.Drawing.Point(186, 252);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(143, 26);
             this.textBox4.TabIndex = 23;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
