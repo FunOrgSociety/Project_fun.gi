@@ -27,18 +27,27 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = "URI=file:database.db3";
+            string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
 
-            konekcija.Open();
+          
             var sqlcmd = konekcija.CreateCommand();
+            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
-            
+            sqlcmd.ExecuteNonQuery();
+
+            sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
+                                        vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
+                                         pronadena boolean)";
+
+            sqlcmd.ExecuteNonQuery();
+
+
             // Dodati još ograničenja, za email, za ponavljanje username ...
             if (textBox2.Text == textBox3.Text)
             {
                
-                sqlcmd.CommandText = "INSERT INTO User(@ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
+                sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
                 sqlcmd.Parameters.Clear();
 
                 sqlcmd.Parameters.AddWithValue("@ime", textBox4.Text);

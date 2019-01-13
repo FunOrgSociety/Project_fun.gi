@@ -10,7 +10,39 @@ namespace WindowsFormsApp2
 {
     class dbClass
     {
-        private static string connectionString = "URI=file:database.db3";
+        
+        private static string connectionString = "Data Source = bazaizklase.db3";
+
+        internal static SQLiteConnection con = new SQLiteConnection(connectionString);
+
+        internal static void OtvoriKonekciju()
+        {
+            con.Open();
+            SQLiteCommand com = con.CreateCommand();
+
+            //ne znam zasto ali nece mi kreirati bazu 
+            com.CommandText = @"CREATE	TABLE User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+
+            com.ExecuteNonQuery();
+
+            com.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
+                                        vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
+                                         pronadena boolean)";
+
+            com.ExecuteNonQuery();
+        }
+
+        internal static void ZatvoriKonekciju()
+        {
+            con.Close();
+        }
+
+
+        //Nisam siguran ali mislim da je ova klasa višak
+
+
+
+        /* private static string connectionString = "URI=file:databas.db3";
 
         internal static SQLiteConnection konekcija = new SQLiteConnection(connectionString);
 
@@ -20,8 +52,8 @@ namespace WindowsFormsApp2
 
             var cmd = konekcija.CreateCommand();
 
-
-            cmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	User(id integer,ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+            //ne znam zasto ali nece mi kreirati bazu 
+            cmd.CommandText = @"CREATE	TABLE User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
             cmd.ExecuteNonQuery();
 
@@ -36,7 +68,7 @@ namespace WindowsFormsApp2
          {
             konekcija.Close();
 
-        }
+        }*/
 
 
 
