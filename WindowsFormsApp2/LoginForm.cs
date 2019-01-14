@@ -237,9 +237,19 @@ namespace WindowsFormsApp2
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            HomeForm Home = new HomeForm();
-            this.Hide();
-            Home.ShowDialog();
+            
+
+            if (UserBox.Text == "admin" && PasswordBox.Text == "admin")
+            {
+                AdminForm admin = new AdminForm();
+                this.Hide();
+                admin.ShowDialog();
+            }
+            else {
+                HomeForm Home = new HomeForm();
+                this.Hide();
+                Home.ShowDialog();
+            }
           
         }
     }

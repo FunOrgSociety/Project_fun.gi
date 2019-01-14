@@ -18,6 +18,15 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
+        /*
+            Postaviti enkripciju na password i Cconfirm passwod
+            Provjeriti ako ceć postoji isti username u bazi
+            Provjeriti ako postoji isti email
+            Dodatno: Postaviti da email bude donekle vjerodostajan                      
+             */
+
+
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
@@ -29,7 +38,7 @@ namespace WindowsFormsApp2
         {
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
-
+            konekcija.Open();
           
             var sqlcmd = konekcija.CreateCommand();
             sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
@@ -75,6 +84,76 @@ namespace WindowsFormsApp2
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

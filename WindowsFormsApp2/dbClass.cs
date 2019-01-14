@@ -20,7 +20,7 @@ namespace WindowsFormsApp2
             con.Open();
             SQLiteCommand com = con.CreateCommand();
 
-            //ne znam zasto ali nece mi kreirati bazu 
+            
             com.CommandText = @"CREATE	TABLE User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
             com.ExecuteNonQuery();
