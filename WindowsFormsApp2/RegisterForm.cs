@@ -76,8 +76,8 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Your password does not match", "Password error");
             }
 
-            
 
+            konekcija.Close();
 
             
 

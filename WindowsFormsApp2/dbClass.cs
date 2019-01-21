@@ -21,15 +21,16 @@ namespace WindowsFormsApp2
             SQLiteCommand com = con.CreateCommand();
 
             
-            com.CommandText = @"CREATE	TABLE User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+            com.CommandText = @"CREATE	TABLE IF NOT EXIST User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
-            com.ExecuteNonQuery();
+            com.ExecuteNonQuery(); //kreira tablicu user
 
             com.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
                                         vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
                                          pronadena boolean)";
 
-            com.ExecuteNonQuery();
+            com.ExecuteNonQuery(); //kreira tablicu gljiva
+
         }
 
         internal static void ZatvoriKonekciju()

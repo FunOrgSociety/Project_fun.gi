@@ -18,6 +18,8 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
+  
+
         private void button1_Click(object sender, EventArgs e)
         {
             //otvaranje baze
@@ -37,23 +39,56 @@ namespace WindowsFormsApp2
 
             sqlcmd.ExecuteNonQuery();
 
-            sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak) VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak)";
+            sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva) " +
+                                               "VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak , @opis , @jestiva)";
+
             sqlcmd.Parameters.Clear();
 
             sqlcmd.Parameters.AddWithValue("@naziv", textBox1.Text);
-            sqlcmd.Parameters.AddWithValue("@boja", textBox2.Text);
-            sqlcmd.Parameters.AddWithValue("@mjesto", textBox3.Text);
-            sqlcmd.Parameters.AddWithValue("@vrijeme", textBox4.Text);
-            sqlcmd.Parameters.AddWithValue("@klobuk", textBox5.Text);
-            sqlcmd.Parameters.AddWithValue("@strucak", textBox6.Text);
+            sqlcmd.Parameters.AddWithValue("@boja", comboBox2.Text);
+            sqlcmd.Parameters.AddWithValue("@mjesto", comboBox3.Text);
+            sqlcmd.Parameters.AddWithValue("@vrijeme", comboBox4.Text);
+            sqlcmd.Parameters.AddWithValue("@klobuk", comboBox5.Text);
+            sqlcmd.Parameters.AddWithValue("@strucak", comboBox6.Text);
+            sqlcmd.Parameters.AddWithValue("@opis", richTextBox1.Text);
+            sqlcmd.Parameters.AddWithValue("@jestiva", comboBox1.Text);
             sqlcmd.ExecuteNonQuery();
 
+
+            MessageBox.Show("Gljiva dodana. Have fun.", "Fun.gi");
             /*
              popraviti sljedece:
                 dodati bool otrovna(jestiva)
-                urediti ennum(boja strucak...)
                 Poraditi dizajn i sitnice             
              */
+
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_Enter(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text == "neobavezno")
+            {
+                richTextBox1.Text = "";
+                richTextBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void richTextBox1_Leave(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text == "")
+            {
+                richTextBox1.Text = "neobavezno";
+                richTextBox1.ForeColor = Color.Gray;
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -70,9 +70,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(358, 215);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 18);
+            this.label7.Size = new System.Drawing.Size(111, 18);
             this.label7.TabIndex = 35;
-            this.label7.Text = "invalid password";
+            this.label7.Text = "Wrong password";
             this.label7.Visible = false;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 

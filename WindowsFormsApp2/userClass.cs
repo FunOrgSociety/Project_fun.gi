@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
 
 namespace WindowsFormsApp2
 {
@@ -15,11 +16,7 @@ namespace WindowsFormsApp2
         public string email { get; set; }
         public int id { get; set; }
 
-        public void Register()
-        {
-            
-
-        }
+        
 
 
     }

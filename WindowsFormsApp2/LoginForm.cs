@@ -73,6 +73,7 @@ namespace WindowsFormsApp2
             this.UserBox.Size = new System.Drawing.Size(168, 23);
             this.UserBox.TabIndex = 8;
             this.UserBox.Text = "Username";
+            this.UserBox.TextChanged += new System.EventHandler(this.UserBox_TextChanged);
             this.UserBox.Enter += new System.EventHandler(this.UserBox_Enter);
             this.UserBox.Leave += new System.EventHandler(this.UserBox_Leave);
             // 
@@ -226,6 +227,28 @@ namespace WindowsFormsApp2
             }
         }
 
+        public void Register()
+        {
+            string connectionString = "Data Source = bazaizregistra.db3";
+            SQLiteConnection konekcija = new SQLiteConnection(connectionString);
+            konekcija.Open();
+
+            SQLiteDataAdapter sda = new SQLiteDataAdapter("Select Count (*) From User where Username ='"+UserBox.Text+"' and Password = '"+PasswordBox.Text+"'",konekcija );
+            DataTable dt = new DataTable(); 
+            sda.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1") //provjera ako se username i password poklapaju podatcima u bazi
+            {
+                HomeForm Home = new HomeForm();
+                this.Hide();
+                Home.ShowDialog();
+
+            }
+            else {
+                MessageBox.Show("Your username/password is incorrect", "Fatal Error"); //neuspjela prijava
+            }
+        }
+
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegisterForm Register = new RegisterForm();
@@ -235,12 +258,13 @@ namespace WindowsFormsApp2
             
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+       private void button1_Click_1(object sender, EventArgs e)
         {
-            
-
+            Register();
+            /*
             if (UserBox.Text == "admin" && PasswordBox.Text == "admin")
             {
+                // staviti sve na HomeFormu ali za admina dodati button dodaj gljivu
                 AdminForm admin = new AdminForm();
                 this.Hide();
                 admin.ShowDialog();
@@ -249,8 +273,13 @@ namespace WindowsFormsApp2
                 HomeForm Home = new HomeForm();
                 this.Hide();
                 Home.ShowDialog();
-            }
-          
+            }*/
+        
+        }
+
+        private void UserBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
