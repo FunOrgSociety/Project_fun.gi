@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
             SQLiteCommand com = con.CreateCommand();
 
             
-            com.CommandText = @"CREATE	TABLE IF NOT EXIST User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+            com.CommandText = @"CREATE	TABLE IF NOT EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
             com.ExecuteNonQuery(); //kreira tablicu user
 

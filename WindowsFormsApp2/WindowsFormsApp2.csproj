@@ -72,6 +72,12 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dbClass.cs" />
+    <Compile Include="dijelovigljivaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dijelovigljivaForm.Designer.cs">
+      <DependentUpon>dijelovigljivaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FotografijaClass.cs" />
     <Compile Include="GljivaClass.cs" />
     <Compile Include="LoginForm.cs">
@@ -103,6 +109,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="savijetibranjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="savijetibranjeForm.Designer.cs">
+      <DependentUpon>savijetibranjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="savijeticiscenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="savijeticiscenjeForm.Designer.cs">
+      <DependentUpon>savijeticiscenjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="savijetipripremaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="savijetipripremaForm.Designer.cs">
+      <DependentUpon>savijetipripremaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SavjetiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +136,9 @@
     <Compile Include="userClass.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dijelovigljivaForm.resx">
+      <DependentUpon>dijelovigljivaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -137,6 +164,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="savijetibranjeForm.resx">
+      <DependentUpon>savijetibranjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="savijeticiscenjeForm.resx">
+      <DependentUpon>savijeticiscenjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="savijetipripremaForm.resx">
+      <DependentUpon>savijetipripremaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SavjetiForm.resx">
       <DependentUpon>SavjetiForm.cs</DependentUpon>
     </EmbeddedResource>

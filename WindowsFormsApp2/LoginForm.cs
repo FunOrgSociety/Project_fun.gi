@@ -86,6 +86,7 @@ namespace WindowsFormsApp2
             this.PasswordBox.Size = new System.Drawing.Size(168, 23);
             this.PasswordBox.TabIndex = 9;
             this.PasswordBox.Text = "Password";
+            this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             this.PasswordBox.Enter += new System.EventHandler(this.PasswordBox_Enter);
             this.PasswordBox.Leave += new System.EventHandler(this.PasswordBox_Leave);
             // 
@@ -214,6 +215,7 @@ namespace WindowsFormsApp2
             if (PasswordBox.Text == "Password")
             {
                 PasswordBox.Text = "";
+                PasswordBox.PasswordChar = '*';                
                 PasswordBox.ForeColor = Color.Black;
             }
         }
@@ -278,6 +280,11 @@ namespace WindowsFormsApp2
         }
 
         private void UserBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
 
         }

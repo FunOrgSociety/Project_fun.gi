@@ -118,10 +118,12 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "crvena",
-            "bijela",
-            "zuta",
-            "plava"});
+            "Gol",
+            "Koprena",
+            "Obojak",
+            "Prstenak",
+            "Prstenak i Obojak",
+            "Bez strucka"});
             this.comboBox3.Location = new System.Drawing.Point(203, 201);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
@@ -131,10 +133,17 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "crvena",
-            "bijela",
-            "zuta",
-            "plava"});
+            "Konveksan",
+            "Ravan",
+            "Odmaknut",
+            "Stozast",
+            "Pupcast",
+            "Polukuglast",
+            "Ljevkast",
+            "Zvonolik",
+            "Ulegnut",
+            "Jajast",
+            "Ispupcen"});
             this.comboBox2.Location = new System.Drawing.Point(203, 156);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -144,10 +153,16 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "crvena",
-            "bijela",
-            "zuta",
-            "plava"});
+            "Zuta",
+            "Zelena",
+            "Crna",
+            "Bijela",
+            "Crvena",
+            "Narancasta",
+            "Smeda",
+            "Siva",
+            "Krem",
+            "Maslinasta"});
             this.comboBox1.Location = new System.Drawing.Point(203, 108);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
