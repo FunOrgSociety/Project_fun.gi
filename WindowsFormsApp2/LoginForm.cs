@@ -229,7 +229,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        public void Register()
+        public void Register() // prebaciti ovo u klasu user
         {
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);

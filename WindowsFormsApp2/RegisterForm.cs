@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
         }
 
         /*
-            Postaviti enkripciju na password i Cconfirm passwod
+            Postaviti enkripciju na password i Cconfirm passwod--rijeseno
             Provjeriti ako ceć postoji isti username u bazi
             Provjeriti ako postoji isti email
             Dodatno: Postaviti da email bude donekle vjerodostajan                      
@@ -36,6 +36,14 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == ""
+                || textBox5.Text == "" || textBox6.Text == "") {
+
+                MessageBox.Show("You have to fill in everything", "Fatal error"); // Svako polje mora biti popunjeno
+
+            }
+            else { 
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
             konekcija.Open();
@@ -43,7 +51,8 @@ namespace WindowsFormsApp2
             var sqlcmd = konekcija.CreateCommand();
             sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
-            sqlcmd.ExecuteNonQuery();
+            sqlcmd.ExecuteNonQuery(); // kreiranje tablica
+
 
             sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
                                         vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
@@ -53,7 +62,7 @@ namespace WindowsFormsApp2
 
 
             // Dodati još ograničenja, za email, za ponavljanje username ...
-            if (textBox2.Text == textBox3.Text)
+            if (textBox2.Text == textBox3.Text) // provjera dal je password i confirnm password isti
             {
                
                 sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
@@ -83,6 +92,7 @@ namespace WindowsFormsApp2
 
         }
 
+        }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
