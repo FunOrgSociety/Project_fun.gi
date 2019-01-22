@@ -73,6 +73,26 @@ namespace WindowsFormsApp2
 
             sqlcmd.ExecuteNonQuery();
 
+             bool exists = false;
+
+                // create a command to check if the username exists
+                using (SQLiteCommand cmd = new SQLiteCommand("select username from [User] where username = @username", konekcija))
+                {
+                    cmd.Parameters.AddWithValue("username", textBox1.Text);
+
+                    Boolean.TryParse(cmd.ExecuteScalar().ToString(), out exists);
+
+
+
+
+                }
+
+            // if exists, show a message error
+            if (exists)
+                MessageBox.Show(textBox1.Text, "This username has been using by another user.");
+            else 
+            {
+
 
             // Dodati još ograničenja, za email, za ponavljanje username ...
             if (textBox2.Text == textBox3.Text) // provjera dal je password i confirnm password isti
@@ -107,7 +127,7 @@ namespace WindowsFormsApp2
             konekcija.Close();
 
             
-
+            }
         }
 
         }

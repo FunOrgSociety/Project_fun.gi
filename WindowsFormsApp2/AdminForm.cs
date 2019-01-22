@@ -39,6 +39,8 @@ namespace WindowsFormsApp2
 
             sqlcmd.ExecuteNonQuery();
 
+
+
             sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva) " +
                                                "VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak , @opis , @jestiva)";
 
@@ -61,7 +63,7 @@ namespace WindowsFormsApp2
                 dodati bool otrovna(jestiva)
                 Poraditi dizajn i sitnice             
              */
-
+             
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
