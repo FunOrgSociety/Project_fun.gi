@@ -59,7 +59,7 @@
             this.LogoutLabel.LinkColor = System.Drawing.Color.DarkRed;
             this.LogoutLabel.Location = new System.Drawing.Point(427, 451);
             this.LogoutLabel.Name = "LogoutLabel";
-            this.LogoutLabel.Size = new System.Drawing.Size(48, 13);
+            this.LogoutLabel.Size = new System.Drawing.Size(63, 17);
             this.LogoutLabel.TabIndex = 31;
             this.LogoutLabel.TabStop = true;
             this.LogoutLabel.Text = "Log Out ";
