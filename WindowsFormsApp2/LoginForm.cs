@@ -238,7 +238,13 @@ namespace WindowsFormsApp2
             SQLiteDataAdapter sda = new SQLiteDataAdapter("Select Count (*) From User where Username ='"+UserBox.Text+"' and Password = '"+PasswordBox.Text+"'",konekcija );
             DataTable dt = new DataTable(); 
             sda.Fill(dt);
-
+            if (UserBox.Text == "admin" && PasswordBox.Text == "admin")
+            {
+                AdminForm admin = new AdminForm();
+                this.Hide();
+                admin.ShowDialog();
+            }
+            else { 
             if (dt.Rows[0][0].ToString() == "1") //provjera ako se username i password poklapaju podatcima u bazi
             {
                 HomeForm Home = new HomeForm();
@@ -250,7 +256,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Your username/password is incorrect", "Fatal Error"); //neuspjela prijava
             }
         }
-
+        }
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegisterForm Register = new RegisterForm();
