@@ -75,7 +75,7 @@ namespace WindowsFormsApp2
 
              bool exists = false;
 
-                // create a command to check if the username exists
+                // create a command to check if the username exists 
                 using (SQLiteCommand cmd = new SQLiteCommand("select username from [User] where username = @username", konekcija))
                 {
                     cmd.Parameters.AddWithValue("username", textBox1.Text);
