@@ -34,6 +34,19 @@ namespace WindowsFormsApp2
             login.ShowDialog();
         }
 
+        bool IsValidEmail(string email) //kreiranje funkcije gdje email mora biti donekle validan, donekle je ključna riječ
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -64,24 +77,29 @@ namespace WindowsFormsApp2
             // Dodati još ograničenja, za email, za ponavljanje username ...
             if (textBox2.Text == textBox3.Text) // provjera dal je password i confirnm password isti
             {
-               
-                sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
-                sqlcmd.Parameters.Clear();
+                    if (IsValidEmail(textBox6.Text) == true)
+                    {
+                        sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
+                        sqlcmd.Parameters.Clear();
 
-                sqlcmd.Parameters.AddWithValue("@ime", textBox4.Text);
-                sqlcmd.Parameters.AddWithValue("@username", textBox1.Text);
-                sqlcmd.Parameters.AddWithValue("@prezime", textBox5.Text);
-                sqlcmd.Parameters.AddWithValue("@email", textBox6.Text);
-                sqlcmd.Parameters.AddWithValue("@password", textBox2.Text);
-                sqlcmd.ExecuteNonQuery();
+                        sqlcmd.Parameters.AddWithValue("@ime", textBox4.Text);
+                        sqlcmd.Parameters.AddWithValue("@username", textBox1.Text);
+                        sqlcmd.Parameters.AddWithValue("@prezime", textBox5.Text);
+                        sqlcmd.Parameters.AddWithValue("@email", textBox6.Text);
+                        sqlcmd.Parameters.AddWithValue("@password", textBox2.Text);
+                        sqlcmd.ExecuteNonQuery();
 
-                MessageBox.Show("You successfully registered. Have fun.", "Register");
+                        MessageBox.Show("You successfully registered. Have fun.", "Register");
 
-                HomeForm home = new HomeForm();
-                this.Hide();
-                home.ShowDialog();
+                        HomeForm home = new HomeForm();
+                        this.Hide();
+                        home.ShowDialog();
+                    }
+                    else {
+                        MessageBox.Show("Incorrect Emali", "Fatal ERROR");
+                    }
             }
-            else {
+                else {
                 MessageBox.Show("Your password does not match", "Password error");
             }
 
