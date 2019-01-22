@@ -70,9 +70,9 @@
             this.savjetButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.savjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savjetButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savjetButton.Location = new System.Drawing.Point(188, 272);
+            this.savjetButton.Location = new System.Drawing.Point(188, 282);
             this.savjetButton.Name = "savjetButton";
-            this.savjetButton.Size = new System.Drawing.Size(155, 49);
+            this.savjetButton.Size = new System.Drawing.Size(155, 59);
             this.savjetButton.TabIndex = 29;
             this.savjetButton.Text = "Savjeti";
             this.savjetButton.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             this.button5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(188, 217);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 49);
+            this.button5.Size = new System.Drawing.Size(155, 59);
             this.button5.TabIndex = 28;
             this.button5.Text = "Kada i gdje brati";
             this.button5.UseVisualStyleBackColor = true;
@@ -96,9 +96,9 @@
             this.pretragaButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.pretragaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pretragaButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pretragaButton.Location = new System.Drawing.Point(188, 162);
+            this.pretragaButton.Location = new System.Drawing.Point(188, 152);
             this.pretragaButton.Name = "pretragaButton";
-            this.pretragaButton.Size = new System.Drawing.Size(155, 49);
+            this.pretragaButton.Size = new System.Drawing.Size(155, 59);
             this.pretragaButton.TabIndex = 27;
             this.pretragaButton.Text = "Pretraga po karakteristikama";
             this.pretragaButton.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(327, 308);
+            this.pictureBox6.Location = new System.Drawing.Point(337, 327);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(122, 82);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
