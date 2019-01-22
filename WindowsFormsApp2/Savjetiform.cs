@@ -54,5 +54,15 @@ namespace WindowsFormsApp2
             dio.ShowDialog();
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
