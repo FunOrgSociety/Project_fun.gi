@@ -25,7 +25,7 @@ namespace WindowsFormsApp2
             //otvaranje baze
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
-            konekcija.Open();
+            konekcija.Open(); 
 
             // kreiranje komandi tj tablica i upita
             var sqlcmd = konekcija.CreateCommand();
