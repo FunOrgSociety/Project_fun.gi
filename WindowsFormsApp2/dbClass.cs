@@ -11,7 +11,7 @@ namespace WindowsFormsApp2
     class dbClass
     {
         
-        private static string connectionString = "Data Source = bazaizklase.db3";
+        private static string connectionString = "Data Source = bazaizregistra.db3";
 
         internal static SQLiteConnection con = new SQLiteConnection(connectionString);
 

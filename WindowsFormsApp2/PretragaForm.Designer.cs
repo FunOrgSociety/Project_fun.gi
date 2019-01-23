@@ -56,10 +56,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(305, 274);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(229, 223);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 28);
+            this.button2.Size = new System.Drawing.Size(121, 23);
             this.button2.TabIndex = 33;
             this.button2.Text = "Pretraži";
             this.button2.UseVisualStyleBackColor = false;
@@ -68,72 +67,38 @@
             // 
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Gol",
-            "Koprena",
-            "Obojak",
-            "Prstenak",
-            "Prstenak i Obojak",
-            "Bez strucka"});
-            this.comboBox3.Location = new System.Drawing.Point(305, 228);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Location = new System.Drawing.Point(229, 185);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 30);
+            this.comboBox3.Size = new System.Drawing.Size(121, 25);
             this.comboBox3.TabIndex = 31;
             // 
             // comboBox2
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Konveksan",
-            "Ravan",
-            "Odmaknut",
-            "Stozast",
-            "Pupcast",
-            "Polukuglast",
-            "Ljevkast",
-            "Zvonolik",
-            "Ulegnut",
-            "Jajast",
-            "Ispupcen"});
-            this.comboBox2.Location = new System.Drawing.Point(305, 173);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox2.Location = new System.Drawing.Point(229, 141);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 30);
+            this.comboBox2.Size = new System.Drawing.Size(121, 25);
             this.comboBox2.TabIndex = 30;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Zuta",
-            "Zelena",
-            "Crna",
-            "Bijela",
-            "Crvena",
-            "Narancasta",
-            "Smeda",
-            "Siva",
-            "Krem",
-            "Maslinasta"});
-            this.comboBox1.Location = new System.Drawing.Point(305, 114);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(229, 93);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 30);
+            this.comboBox1.Size = new System.Drawing.Size(121, 25);
             this.comboBox1.TabIndex = 29;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(199, 232);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(149, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 23);
+            this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 28;
             this.label3.Text = "Stručak: ";
             // 
@@ -142,10 +107,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(150, 173);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(112, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 23);
+            this.label2.Size = new System.Drawing.Size(97, 18);
             this.label2.TabIndex = 27;
             this.label2.Text = "Oblik klobuka:";
             // 
@@ -154,10 +118,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(223, 118);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(167, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 23);
+            this.label1.Size = new System.Drawing.Size(42, 18);
             this.label1.TabIndex = 26;
             this.label1.Text = "Boja: ";
             // 
@@ -165,10 +128,9 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(625, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(469, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 34);
+            this.pictureBox3.Size = new System.Drawing.Size(27, 28);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
@@ -186,17 +148,19 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 86);
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(661, 408);
+            this.panel1.Size = new System.Drawing.Size(496, 332);
             this.panel1.TabIndex = 34;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(606, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(454, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
@@ -204,9 +168,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 431);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 350);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(661, 457);
+            this.pictureBox2.Size = new System.Drawing.Size(496, 371);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
@@ -214,24 +179,24 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, -213);
+            this.pictureBox4.Location = new System.Drawing.Point(0, -173);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(668, 333);
+            this.pictureBox4.Size = new System.Drawing.Size(501, 271);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 36;
             this.pictureBox4.TabStop = false;
             // 
             // PretragaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(659, 590);
+            this.ClientSize = new System.Drawing.Size(494, 479);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PretragaForm";
             this.Text = "fun.gi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

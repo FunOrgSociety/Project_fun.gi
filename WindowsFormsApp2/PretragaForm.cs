@@ -12,9 +12,15 @@ namespace WindowsFormsApp2
 {
     public partial class PretragaForm : Form
     {
+
+        public List<GljivaClass> gljiva;
+
         public PretragaForm()
         {
             InitializeComponent();
+
+            populateCombo();
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -24,9 +30,15 @@ namespace WindowsFormsApp2
             Home.ShowDialog();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void populateCombo()
         {
-
+            gljiva = GljivaClass.dohvati();
+            comboBox1.DataSource = gljiva;
+            comboBox2.DataSource = gljiva;
+            comboBox3.DataSource = gljiva;
+            comboBox1.DisplayMember = "Boja";
+            comboBox2.DisplayMember = "Klobuk";
+            comboBox3.DisplayMember = "Strucak";
         }
     }
 }
