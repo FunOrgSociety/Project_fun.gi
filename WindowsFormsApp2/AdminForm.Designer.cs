@@ -259,9 +259,9 @@
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(51, 23);
+            this.label7.Size = new System.Drawing.Size(184, 23);
             this.label7.TabIndex = 60;
-            this.label7.Text = "Opis:";
+            this.label7.Text = "Savjet za razlikovanje:";
             // 
             // label3
             // 
