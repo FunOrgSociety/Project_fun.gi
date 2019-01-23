@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class savijetibranjeForm : Form
+    public partial class Form1 : Form
     {
-        public savijetibranjeForm()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            SavjetiForm savjeti = new SavjetiForm();
-            this.Hide();
-            savjeti.ShowDialog();
         }
     }
 }

@@ -16,5 +16,12 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            SavjetiForm savjeti = new SavjetiForm();
+            this.Hide();
+            savjeti.ShowDialog();
+        }
     }
 }

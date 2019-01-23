@@ -69,5 +69,44 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            HomeForm Home = new HomeForm();
+            this.Hide();
+            Home.ShowDialog();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            dijelovigljivaForm dijelovigljiva = new dijelovigljivaForm();
+            this.Hide();
+            dijelovigljiva.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            savijetibranjeForm savijetibranje = new savijetibranjeForm();
+            this.Hide();
+            savijetibranje.ShowDialog();
+        }
+
+        private void pictureBox5_Click_1(object sender, EventArgs e)
+        {
+            savijeticiscenjeForm savijeticiscenje = new savijeticiscenjeForm();
+            this.Hide();
+            savijeticiscenje.ShowDialog();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            savijetipripremaForm savijetipriprema = new savijetipripremaForm();
+            this.Hide();
+            savijetipriprema.ShowDialog();
+        }
     }
 }
