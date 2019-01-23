@@ -188,5 +188,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
