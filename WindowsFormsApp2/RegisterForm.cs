@@ -60,9 +60,9 @@ namespace WindowsFormsApp2
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
             konekcija.Open();
-          
-            var sqlcmd = konekcija.CreateCommand();
-            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+                var lista = new List<userClass>();
+                var sqlcmd = konekcija.CreateCommand();
+            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20) UNIQUE,password varchar(20), email varchar(20))";
 
             sqlcmd.ExecuteNonQuery(); // kreiranje tablica
 
