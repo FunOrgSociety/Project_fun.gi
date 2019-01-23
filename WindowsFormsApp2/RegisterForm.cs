@@ -22,7 +22,7 @@ namespace WindowsFormsApp2
             Postaviti enkripciju na password i Cconfirm passwod--rijeseno
             Provjeriti ako ceć postoji isti username u bazi
             Provjeriti ako postoji isti email
-            Dodatno: Postaviti da email bude donekle vjerodostajan    rijeseno                  
+            Dodatno: Postaviti da email bude donekle   vjerodostajan    rijeseno                  
              */
 
 
