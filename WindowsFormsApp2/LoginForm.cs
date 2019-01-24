@@ -270,7 +270,7 @@ namespace WindowsFormsApp2
         {
             Register();
             /*
-            if (UserBox.Text == "admin" && PasswordBox.Text == "admin")
+            if (UserBox.Text == "admin" && PasswordBox.Text == "admin")  
             {
                 // staviti sve na HomeFormu ali za admina dodati button dodaj gljivu
                 AdminForm admin = new AdminForm();
