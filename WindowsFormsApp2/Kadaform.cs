@@ -25,6 +25,9 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
+            populatecombo1();
+            populatecombo2();
+
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Naziv");
@@ -50,10 +53,8 @@ namespace WindowsFormsApp2
                 dt.Rows.Add(a.naziv, a.Mjesto_branja, a.Vrijeme_branja);
                 
             }
-
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
 
         }
 
@@ -64,7 +65,35 @@ namespace WindowsFormsApp2
             Home.ShowDialog();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
+        }
 
+        private void KadaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void populatecombo1()
+        {
+            gljiva = GljivaClass.dohvati();
+            comboBox1.DataSource = gljiva;
+            comboBox1.DisplayMember = "Mjesto_branja";
+
+        }
+
+        public void populatecombo2()
+        {
+            gljiva = GljivaClass.dohvati();
+            comboBox2.DataSource = gljiva;
+            comboBox2.DisplayMember = "Vrijeme_branja";
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
