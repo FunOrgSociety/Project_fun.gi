@@ -19,8 +19,9 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
-            populateCombo();
-
+            populateCombo1();
+            populateCombo2();
+            populateCombo3();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -30,15 +31,26 @@ namespace WindowsFormsApp2
             Home.ShowDialog();
         }
 
-        public void populateCombo()
+        public void populateCombo1()
         {
             gljiva = GljivaClass.dohvati();
             comboBox1.DataSource = gljiva;
-            comboBox2.DataSource = gljiva;
-            comboBox3.DataSource = gljiva;
             comboBox1.DisplayMember = "Boja";
+
+        }
+        public void populateCombo2()
+        {
+            gljiva = GljivaClass.dohvati();
+            comboBox2.DataSource = gljiva;
             comboBox2.DisplayMember = "Klobuk";
+        }
+        public void populateCombo3()
+        {
+            gljiva = GljivaClass.dohvati();
+            comboBox3.DataSource = gljiva;
             comboBox3.DisplayMember = "Strucak";
         }
+
+
     }
 }
