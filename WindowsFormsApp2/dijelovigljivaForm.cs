@@ -21,5 +21,12 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            SavjetiForm savjeti = new SavjetiForm();
+            this.Hide();
+            savjeti.ShowDialog();
+        }
     }
 }
