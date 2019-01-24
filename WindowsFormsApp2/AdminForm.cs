@@ -91,7 +91,9 @@ namespace WindowsFormsApp2
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            HomeForm Home = new HomeForm();
+            this.Hide();
+            Home.ShowDialog();
         }
     }
 }
