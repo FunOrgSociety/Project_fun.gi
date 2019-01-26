@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
             login.ShowDialog();
         }
 
-        bool IsValidEmail(string email) //kreiranje funkcije gdje email mora biti donekle validan, donekle je ključna riječ
+        public bool IsValidEmail(string email) //kreiranje funkcije gdje email mora biti donekle validan, donekle je ključna riječ
         {
             try
             {
@@ -47,71 +47,126 @@ namespace WindowsFormsApp2
             }
         }
 
+        
+
+        public void usernameExist()
+        {
+           }
+
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == ""
-                || textBox5.Text == "" || textBox6.Text == "") {
-
-                MessageBox.Show("You have to fill in everything", "Fatal error"); // Svako polje mora biti popunjeno
-
-            }
-            else { 
+            bool usernamebool = false;
+            bool emailbool = false;
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
             konekcija.Open();
-                var lista = new List<userClass>();
-                var sqlcmd = konekcija.CreateCommand();
-            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20) UNIQUE,password varchar(20), email varchar(20))";
 
-            sqlcmd.ExecuteNonQuery(); // kreiranje tablica
+            string sql = "SELECT * FROM User WHERE username='" + textBox1.Text + "'";
+            string sql2 = "SELECT * FROM User WHERE email='" + textBox2.Text + "'";
+            SQLiteCommand cmda = new SQLiteCommand(sql, konekcija);
+            SQLiteCommand cmda2 = new SQLiteCommand(sql2, konekcija);
 
 
-            sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
+            cmda.Connection = konekcija;
+            cmda2.Connection = konekcija;
+
+            SQLiteDataReader rda = cmda.ExecuteReader();
+            SQLiteDataReader rda2 = cmda2.ExecuteReader();
+
+            if (rda.Read())
+            {
+                usernamebool = true;
+            }
+
+            if (rda2.Read())
+            {
+                emailbool = true;
+            }
+
+            if (usernamebool == false)
+            {
+                if (emailbool == false)
+                {
+                    if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == ""
+                        || textBox5.Text == "" || textBox6.Text == "")
+                    {
+
+                        MessageBox.Show("You have to fill in everything", "Fatal error"); // Svako polje mora biti popunjeno
+
+                    }
+                    else
+                    {
+
+                        var lista = new List<userClass>();
+                        var sqlcmd = konekcija.CreateCommand();
+                        sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20) UNIQUE,password varchar(20), email varchar(20))";
+
+                        sqlcmd.ExecuteNonQuery(); // kreiranje tablica
+
+
+                        sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
                                         vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
                                          pronadena boolean)";
 
-            sqlcmd.ExecuteNonQuery();
-
-
-            
-
-
-            // Dodati još ograničenja, za email, za ponavljanje username ...
-            if (textBox2.Text == textBox3.Text) // provjera dal je password i confirnm password isti
-            {
-                    if (IsValidEmail(textBox6.Text) == true)
-                    {
-                        sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
-                        sqlcmd.Parameters.Clear();
-
-                        sqlcmd.Parameters.AddWithValue("@ime", textBox4.Text);
-                        sqlcmd.Parameters.AddWithValue("@username", textBox1.Text);
-                        sqlcmd.Parameters.AddWithValue("@prezime", textBox5.Text);
-                        sqlcmd.Parameters.AddWithValue("@email", textBox6.Text);
-                        sqlcmd.Parameters.AddWithValue("@password", textBox2.Text);
                         sqlcmd.ExecuteNonQuery();
 
-                        MessageBox.Show("You successfully registered. Have fun.", "Register");
 
-                        HomeForm home = new HomeForm();
-                        this.Hide();
-                        home.ShowDialog();
+
+
+
+                        // Dodati još ograničenja, za email, za ponavljanje username ...
+                        if (textBox2.Text == textBox3.Text) // provjera dal je password i confirnm password isti
+                        {
+                            if (IsValidEmail(textBox6.Text) == true)
+                            {
+                                sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
+                                sqlcmd.Parameters.Clear();
+
+                                sqlcmd.Parameters.AddWithValue("@ime", textBox4.Text);
+                                sqlcmd.Parameters.AddWithValue("@username", textBox1.Text);
+                                sqlcmd.Parameters.AddWithValue("@prezime", textBox5.Text);
+                                sqlcmd.Parameters.AddWithValue("@email", textBox6.Text);
+                                sqlcmd.Parameters.AddWithValue("@password", textBox2.Text);
+                                sqlcmd.ExecuteNonQuery();
+
+                                MessageBox.Show("You successfully registered. Have fun.", "Register");
+
+                                HomeForm home = new HomeForm();
+                                this.Hide();
+                                home.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect Emali", "Fatal ERROR");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your password does not match", "Password error");
+                        }
+
+
+                        konekcija.Close();
+
                     }
-                    else {
-                        MessageBox.Show("Incorrect Emali", "Fatal ERROR");
-                    }
+
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Postoji mail ", "Fatal ERROR");
+                }
             }
-                else {
-                MessageBox.Show("Your password does not match", "Password error");
+            else
+            {
+                MessageBox.Show("Postoji suername ", "Fatal ERROR");
             }
-
-
-            konekcija.Close();
-
-            
-            
-        }
+        
 
         }
         private void textBox4_TextChanged(object sender, EventArgs e)
