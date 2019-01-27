@@ -51,7 +51,7 @@ namespace WindowsFormsApp2
 
 
 
-                sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva, savjet) " +
+                sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva) " +
                                                    "VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak , @opis , @jestiva)";
 
                 sqlcmd.Parameters.Clear();

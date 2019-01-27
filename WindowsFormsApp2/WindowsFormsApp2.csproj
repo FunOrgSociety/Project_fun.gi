@@ -102,6 +102,12 @@
     <Compile Include="PretragaControl.Designer.cs">
       <DependentUpon>PretragaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pretragaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pretragaff.Designer.cs">
+      <DependentUpon>Pretragaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PretragaControl.resx">
       <DependentUpon>PretragaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pretragaff.resx">
+      <DependentUpon>Pretragaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
