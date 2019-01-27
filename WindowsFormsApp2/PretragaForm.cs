@@ -107,6 +107,16 @@ namespace WindowsFormsApp2
             a.ShowDialog();
         }
 
+        private void PretragaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         public void populateCombo1()
         {
