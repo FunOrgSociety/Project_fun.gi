@@ -113,7 +113,8 @@ namespace WindowsFormsApp2
 
                         sqlcmd.ExecuteNonQuery();
 
-
+                        sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
+                        sqlcmd.ExecuteNonQuery();
 
 
 

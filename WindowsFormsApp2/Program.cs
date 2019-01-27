@@ -19,10 +19,7 @@ namespace WindowsFormsApp2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
-            //dbClass baza = new dbClass();
-            dbClass.OtvoriKonekciju();
-
-
+           
         }
     }
 }

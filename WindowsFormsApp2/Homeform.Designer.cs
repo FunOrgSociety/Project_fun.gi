@@ -37,6 +37,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -59,7 +60,7 @@
             this.LogoutLabel.LinkColor = System.Drawing.Color.DarkRed;
             this.LogoutLabel.Location = new System.Drawing.Point(427, 451);
             this.LogoutLabel.Name = "LogoutLabel";
-            this.LogoutLabel.Size = new System.Drawing.Size(63, 17);
+            this.LogoutLabel.Size = new System.Drawing.Size(48, 13);
             this.LogoutLabel.TabIndex = 31;
             this.LogoutLabel.TabStop = true;
             this.LogoutLabel.Text = "Log Out ";
@@ -70,7 +71,7 @@
             this.savjetButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.savjetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savjetButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savjetButton.Location = new System.Drawing.Point(188, 282);
+            this.savjetButton.Location = new System.Drawing.Point(188, 236);
             this.savjetButton.Name = "savjetButton";
             this.savjetButton.Size = new System.Drawing.Size(155, 59);
             this.savjetButton.TabIndex = 29;
@@ -83,7 +84,7 @@
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(188, 217);
+            this.button5.Location = new System.Drawing.Point(188, 171);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(155, 59);
             this.button5.TabIndex = 28;
@@ -96,7 +97,7 @@
             this.pretragaButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.pretragaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pretragaButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pretragaButton.Location = new System.Drawing.Point(188, 152);
+            this.pretragaButton.Location = new System.Drawing.Point(188, 106);
             this.pretragaButton.Name = "pretragaButton";
             this.pretragaButton.Size = new System.Drawing.Size(155, 59);
             this.pretragaButton.TabIndex = 27;
@@ -134,10 +135,24 @@
             this.pictureBox6.TabIndex = 30;
             this.pictureBox6.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(188, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 59);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Dodaj gljivu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HomeForm
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(494, 479);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.LogoutLabel);
             this.Controls.Add(this.savjetButton);
@@ -168,5 +183,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button button1;
     }
 }

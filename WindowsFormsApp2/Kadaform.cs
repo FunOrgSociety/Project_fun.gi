@@ -27,6 +27,7 @@ namespace WindowsFormsApp2
 
             populatecombo1();
             populatecombo2();
+            
 
             DataTable dt = new DataTable();
 

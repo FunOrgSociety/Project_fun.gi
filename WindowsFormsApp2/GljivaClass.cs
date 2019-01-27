@@ -53,6 +53,34 @@ namespace WindowsFormsApp2
             return podaci;
         }
 
+        public void dodaj(string naziv,string Boja,string Mjesto_branja, string Vrijeme_branja, string Klobuk,string Strucak, string opis,bool jestiva) {
+
+            string connectionString = "Data Source = bazaizregistra.db3";
+            SQLiteConnection konekcija = new SQLiteConnection(connectionString);
+            konekcija.Open();
+
+            // kreiranje komandi tj tablica i upita
+            var sqlcmd = konekcija.CreateCommand();
+
+            sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva) " +
+                                               "VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak , @opis , @jestiva)";
+
+            sqlcmd.Parameters.Clear();
+
+            sqlcmd.Parameters.AddWithValue("@naziv", naziv);
+            sqlcmd.Parameters.AddWithValue("@boja", Boja);
+            sqlcmd.Parameters.AddWithValue("@mjesto",Mjesto_branja);
+            sqlcmd.Parameters.AddWithValue("@vrijeme", Vrijeme_branja);
+            sqlcmd.Parameters.AddWithValue("@klobuk", Klobuk);
+            sqlcmd.Parameters.AddWithValue("@strucak", Strucak);
+            sqlcmd.Parameters.AddWithValue("@opis", opis);
+            sqlcmd.Parameters.AddWithValue("@jestiva", jestiva);
+            sqlcmd.ExecuteNonQuery();
+            konekcija.Close();
+
+
+
+        }
 
 
 

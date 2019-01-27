@@ -53,5 +53,12 @@ namespace WindowsFormsApp2
             pretraga.ShowDialog();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminLogin alog = new AdminLogin();
+            this.Hide();
+            alog.ShowDialog();
+        }
     }
 }

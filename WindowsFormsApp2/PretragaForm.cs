@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace WindowsFormsApp2
 {
@@ -14,6 +15,8 @@ namespace WindowsFormsApp2
     {
 
         public List<GljivaClass> gljiva;
+
+       // bool boja = false;
 
         public PretragaForm()
         {
@@ -30,12 +33,51 @@ namespace WindowsFormsApp2
             this.Hide();
             Home.ShowDialog();
         }
+        public void populateCombo1()
+        {
+            comboBox1.Items.Add("Zuta");
+            comboBox1.Items.Add("Zelena");
+            comboBox1.Items.Add("Crna");
+            comboBox1.Items.Add("Crvena");
+            comboBox1.Items.Add("Narancasta");
+            comboBox1.Items.Add("Smeda");
+            comboBox1.Items.Add("Siva");
+            comboBox1.Items.Add("Krem");
+            comboBox1.Items.Add("Maslinasta");
+        }
 
+        public void populateCombo2()
+        {
+            comboBox2.Items.Add("Konveksan");
+            comboBox2.Items.Add("Ravan");
+            comboBox2.Items.Add("Odmaknut");
+            comboBox2.Items.Add("Stozast");
+            comboBox2.Items.Add("Pupcast");
+            comboBox2.Items.Add("Polukuglast");
+            comboBox2.Items.Add("Ljevkast");
+            comboBox2.Items.Add("Zvonolik");
+            comboBox2.Items.Add("Ulegnut");
+            comboBox2.Items.Add("Jajast");
+            comboBox2.Items.Add("Ispupcen");
+        }
+
+        public void populateCombo3()
+        {
+            comboBox3.Items.Add("Gol");
+            comboBox3.Items.Add("Koprena");
+            comboBox3.Items.Add("Obojak");
+            comboBox3.Items.Add("Prstenak");
+            comboBox3.Items.Add("Prstenak i Obojak");
+            comboBox3.Items.Add("Bez Strucka");
+        }
+
+        /*
         public void populateCombo1()
         {
             gljiva = GljivaClass.dohvati();
             comboBox1.DataSource = gljiva;
             comboBox1.DisplayMember = "Boja";
+            
 
         }
         public void populateCombo2()
@@ -51,6 +93,6 @@ namespace WindowsFormsApp2
             comboBox3.DisplayMember = "Strucak";
         }
 
-
+    */ // NAISAO SAM NA PROBLEM S OVIME JER SU MI SE POJAVLJIVALJE DUPLE VRJEDNOSTI PA SAM ODLUCIO RUCNO UNIJETI PARAMETRE, ALI VALJA PROVJERITI ZA MOGUCI UPGRADE KASNIJE
     }
 }
