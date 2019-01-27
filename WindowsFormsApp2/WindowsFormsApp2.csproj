@@ -96,6 +96,12 @@
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Podatci.cs" />
+    <Compile Include="PretragaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PretragaControl.Designer.cs">
+      <DependentUpon>PretragaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PretragaControl.resx">
+      <DependentUpon>PretragaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>

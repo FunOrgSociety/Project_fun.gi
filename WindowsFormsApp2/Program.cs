@@ -19,25 +19,16 @@ namespace WindowsFormsApp2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
+            dbClass db = new dbClass();
+            dbClass.OtvoriKonekciju();
+
             string connectionString = "Data Source = bazaizregistra.db3";
             SQLiteConnection konekcija = new SQLiteConnection(connectionString);
             konekcija.Open();
 
-            var lista = new List<userClass>();
-            var sqlcmd = konekcija.CreateCommand();
-            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20) UNIQUE,password varchar(20), email varchar(20))";
+            // kreiranje komandi tj tablica i upita
+            
 
-            sqlcmd.ExecuteNonQuery(); // kreiranje tablica
-
-
-            sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
-                                        vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
-                                         pronadena boolean)";
-
-            sqlcmd.ExecuteNonQuery();
-
-            sqlcmd.CommandText = "INSERT INTO User(ime,username,prezime,password,email) VALUES (@ime,@username,@prezime,@password,@email)";
-            sqlcmd.ExecuteNonQuery();
 
         }
     }

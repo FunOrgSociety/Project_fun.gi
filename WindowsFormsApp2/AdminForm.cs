@@ -22,48 +22,58 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //otvaranje baze
-            string connectionString = "Data Source = bazaizregistra.db3";
-            SQLiteConnection konekcija = new SQLiteConnection(connectionString);
-            konekcija.Open(); 
 
-            // kreiranje komandi tj tablica i upita
-            var sqlcmd = konekcija.CreateCommand();
-            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+            if (textBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "" || comboBox4.Text == ""
+                        || comboBox5.Text == "" || comboBox6.Text == "")
+            {
 
-            sqlcmd.ExecuteNonQuery();
+                MessageBox.Show("You have to fill in everything", "Fatal error"); // Svako polje mora biti popunjeno
 
-            sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
+            }
+            else
+            {
+                //otvaranje baze
+                string connectionString = "Data Source = bazaizregistra.db3";
+                SQLiteConnection konekcija = new SQLiteConnection(connectionString);
+                konekcija.Open();
+
+                // kreiranje komandi tj tablica i upita
+                var sqlcmd = konekcija.CreateCommand();
+                sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+
+                sqlcmd.ExecuteNonQuery();
+
+                sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
                                         vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
                                          pronadena boolean)";
 
-            sqlcmd.ExecuteNonQuery();
+                sqlcmd.ExecuteNonQuery();
 
 
 
-            sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva) " +
-                                               "VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak , @opis , @jestiva)";
+                sqlcmd.CommandText = "INSERT INTO Gljiva(naziv , boja , mjesto , vrijeme , klobuk , strucak , opis , jestiva, savjet) " +
+                                                   "VALUES (@naziv , @boja , @mjesto , @vrijeme , @klobuk , @strucak , @opis , @jestiva)";
 
-            sqlcmd.Parameters.Clear();
+                sqlcmd.Parameters.Clear();
 
-            sqlcmd.Parameters.AddWithValue("@naziv", textBox1.Text);
-            sqlcmd.Parameters.AddWithValue("@boja", comboBox2.Text);
-            sqlcmd.Parameters.AddWithValue("@mjesto", comboBox3.Text);
-            sqlcmd.Parameters.AddWithValue("@vrijeme", comboBox4.Text);
-            sqlcmd.Parameters.AddWithValue("@klobuk", comboBox5.Text);
-            sqlcmd.Parameters.AddWithValue("@strucak", comboBox6.Text);
-            sqlcmd.Parameters.AddWithValue("@opis", richTextBox1.Text);
-            sqlcmd.Parameters.AddWithValue("@jestiva", comboBox1.Text);
-            sqlcmd.ExecuteNonQuery();
+                sqlcmd.Parameters.AddWithValue("@naziv", textBox1.Text);
+                sqlcmd.Parameters.AddWithValue("@boja", comboBox2.Text);
+                sqlcmd.Parameters.AddWithValue("@mjesto", comboBox3.Text);
+                sqlcmd.Parameters.AddWithValue("@vrijeme", comboBox4.Text);
+                sqlcmd.Parameters.AddWithValue("@klobuk", comboBox5.Text);
+                sqlcmd.Parameters.AddWithValue("@strucak", comboBox6.Text);
+                sqlcmd.Parameters.AddWithValue("@opis", richTextBox1.Text);
+                sqlcmd.Parameters.AddWithValue("@jestiva", comboBox1.Text);
+                sqlcmd.ExecuteNonQuery();
 
 
-            MessageBox.Show("Gljiva dodana. Have fun.", "Fun.gi");
-            /*
-             popraviti sljedece:
-                dodati bool otrovna(jestiva)
-                Poraditi dizajn i sitnice             
-             */
-             
+                MessageBox.Show("Gljiva dodana. Have fun.", "Fun.gi");
+                /*
+                 popraviti sljedece:
+                    dodati bool otrovna(jestiva)
+                    Poraditi dizajn i sitnice             
+                 */
+            } 
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
