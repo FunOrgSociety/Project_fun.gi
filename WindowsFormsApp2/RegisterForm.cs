@@ -11,7 +11,7 @@ using System.Data.SQLite;
 
 namespace WindowsFormsApp2
 {
-    public partial class RegisterForm : Form
+    public partial  class RegisterForm : Form
     {
         public RegisterForm()
         {
