@@ -19,11 +19,11 @@ namespace WindowsFormsApp2
         {
             con.Open();
             SQLiteCommand com = con.CreateCommand();
-            string sql = "CREATE TABLE User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
+            string sql = "CREATE TABLE IF NOT EXIST User(ime varchar(20),prezime varchar(20),username varchar(20),password varchar(20), email varchar(20))";
 
             SQLiteCommand command = new SQLiteCommand(sql, con);
             command.ExecuteNonQuery();
-            string sql2 = "CREATE	TABLE	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,                                        pronadena boolean)";
+            string sql2 = "CREATE	TABLE IF NOT EXIST	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,                                        pronadena boolean)";
 
             SQLiteCommand command2 = new SQLiteCommand(sql2, con);
             command2.ExecuteNonQuery();
