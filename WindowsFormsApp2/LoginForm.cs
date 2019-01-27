@@ -257,9 +257,26 @@ namespace WindowsFormsApp2
             RegisterForm Register = new RegisterForm();
             this.Hide();
             Register.ShowDialog();
-           
-           // dbClass database = new dbClass();
-            
+
+            string connectionString = "Data Source = bazaizregistra.db3";
+            SQLiteConnection konekcija = new SQLiteConnection(connectionString);
+            konekcija.Open();
+
+            var lista = new List<userClass>();
+            var sqlcmd = konekcija.CreateCommand();
+            sqlcmd.CommandText = @"CREATE	TABLE IF NOT	EXISTS User(ime varchar(20),prezime varchar(20),username varchar(20) UNIQUE,password varchar(20), email varchar(20))";
+
+            sqlcmd.ExecuteNonQuery(); // kreiranje tablica
+
+
+            sqlcmd.CommandText = @"CREATE	TABLE	IF	NOT	EXISTS	Gljiva(id integer, naziv varchar (20), boja varchar(20), mjesto varchar(20),
+                                        vrijeme varchar(20), jestiva boolean, opis varchar(200), klobuk varchar(30) , strucak varchar(30) ,
+                                         pronadena boolean)";
+
+            sqlcmd.ExecuteNonQuery();
+
+            // dbClass database = new dbClass();
+
         }
 
        private void button1_Click_1(object sender, EventArgs e)

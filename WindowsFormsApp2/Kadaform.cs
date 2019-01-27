@@ -75,8 +75,26 @@ namespace WindowsFormsApp2
         {
 
         }
-
         public void populatecombo1()
+        {
+            comboBox1.Items.Add("Crnogoricna Suma");
+            comboBox1.Items.Add("Bjelogoricna Suma");
+            comboBox1.Items.Add("Sve sume");
+            comboBox1.Items.Add("Livada");
+        }
+
+        public void populatecombo2()
+        {
+            comboBox2.Items.Add("Zima");
+            comboBox2.Items.Add("Ljeto");
+            comboBox2.Items.Add("Jesen");
+            comboBox2.Items.Add("Proljeće");
+            comboBox2.Items.Add("Cijela Godina");
+            
+        }
+
+
+        /*public void populatecombo1()
         {
             gljiva = GljivaClass.dohvati();
             comboBox1.DataSource = gljiva;
@@ -91,7 +109,7 @@ namespace WindowsFormsApp2
             comboBox2.DisplayMember = "Vrijeme_branja";
 
         }
-
+        */
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
