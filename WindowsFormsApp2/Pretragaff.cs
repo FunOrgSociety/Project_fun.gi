@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +10,15 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class PretragaControl : UserControl
+    public partial class Pretragaff : Form
     {
 
-        public List<GljivaClass> gljiva;
+        public List<GljivaClass> gljiva; 
 
-        public PretragaControl()
+        public Pretragaff()
         {
+
+
             InitializeComponent();
 
             DataTable dt = new DataTable();
@@ -41,17 +43,13 @@ namespace WindowsFormsApp2
                 row["Strucak"] = Convert.ToString(a.Strucak);
                 row["Klobuk"] = Convert.ToString(a.Klobuk);
 
-                dt.Rows.Add(a.naziv, a.Mjesto_branja, a.Vrijeme_branja);
+                dt.Rows.Add(a.naziv, a.Boja,a.Mjesto_branja, a.Vrijeme_branja, a.Strucak, a.Klobuk);
 
             }
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
-}
+    }
+

@@ -71,6 +71,13 @@ namespace WindowsFormsApp2
             comboBox3.Items.Add("Bez Strucka");
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Pretragaff a = new Pretragaff();
+            this.Hide();
+            a.ShowDialog();
+        }
+
         /*
         public void populateCombo1()
         {
