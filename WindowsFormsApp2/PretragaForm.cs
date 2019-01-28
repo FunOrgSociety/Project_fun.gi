@@ -25,7 +25,7 @@ namespace WindowsFormsApp2
             populateCombo1();
             populateCombo2();
             populateCombo3();
-
+            pictureBox4.Hide();
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Naziv");
@@ -152,6 +152,7 @@ namespace WindowsFormsApp2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Klobuk = '{0}'", comboBox2.SelectedItem.ToString());
         }
 
@@ -171,6 +172,31 @@ namespace WindowsFormsApp2
             DataGridViewRow selected = dataGridView1.Rows[index];
             richTextBox1.Text = selected.Cells[6].Value.ToString();
 
+        }
+
+        private void comboBox2_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label4_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox4.Show();
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.Hide();
         }
 
         /*

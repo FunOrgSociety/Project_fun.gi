@@ -20,8 +20,8 @@ namespace WindowsFormsApp2
 
         /*
             Postaviti enkripciju na password i Cconfirm passwod--rijeseno
-            Provjeriti ako ceć postoji isti username u bazi
-            Provjeriti ako postoji isti email
+            Provjeriti ako ceć postoji isti username u bazi------rijeseno
+            Provjeriti ako postoji isti email ------rijeseno
             Dodatno: Postaviti da email bude donekle   vjerodostajan    rijeseno                  
              */
 
@@ -65,7 +65,7 @@ namespace WindowsFormsApp2
             konekcija.Open();
 
             string sql = "SELECT * FROM User WHERE username='" + textBox1.Text + "'";
-            string sql2 = "SELECT * FROM User WHERE email='" + textBox2.Text + "'";
+            string sql2 = "SELECT * FROM User WHERE email='" + textBox6.Text + "'";
             SQLiteCommand cmda = new SQLiteCommand(sql, konekcija);
             SQLiteCommand cmda2 = new SQLiteCommand(sql2, konekcija);
 
@@ -152,6 +152,7 @@ namespace WindowsFormsApp2
                         konekcija.Close();
 
                     }
+                    konekcija.Close();
 
 
 
