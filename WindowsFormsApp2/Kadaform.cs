@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
 
             dt.Columns.Add("Naziv");
            // dt.Columns.Add("Boja");
-            dt.Columns.Add("Mjesto branja");
+            dt.Columns.Add("Mjesto");
             dt.Columns.Add("Vrijeme");
             //dt.Columns.Add("Strucak");
             //dt.Columns.Add("Klobuk");
@@ -46,7 +46,7 @@ namespace WindowsFormsApp2
 
                 row["Naziv"] = Convert.ToString(a.naziv);
               //  row["Boja"] = Convert.ToString(a.Boja);
-                row["Mjesto branja"] = Convert.ToString(a.Mjesto_branja);
+                row["Mjesto"] = Convert.ToString(a.Mjesto_branja);
                 row["Vrijeme"] = Convert.ToString(a.Vrijeme_branja);
                // row["Strucak"] = Convert.ToString(a.Strucak);
               //  row["Klobuk"] = Convert.ToString(a.Klobuk);
@@ -88,7 +88,7 @@ namespace WindowsFormsApp2
             comboBox2.Items.Add("Zima");
             comboBox2.Items.Add("Ljeto");
             comboBox2.Items.Add("Jesen");
-            comboBox2.Items.Add("Proljeće");
+            comboBox2.Items.Add("Proljece");
             comboBox2.Items.Add("Cijela Godina");
             
         }
@@ -112,7 +112,12 @@ namespace WindowsFormsApp2
         */
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Mjesto = '{0}'", comboBox1.SelectedItem.ToString());
+        }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Vrijeme = '{0}'", comboBox2.SelectedItem.ToString());
         }
     }
 }

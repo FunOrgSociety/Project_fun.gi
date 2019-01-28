@@ -41,6 +41,7 @@ namespace WindowsFormsApp2
                 a.Vrijeme_branja = (string)Convert.ToString(reader["vrijeme"]);
                 a.Klobuk = (string)Convert.ToString(reader["klobuk"]);
                 a.Strucak = (string)Convert.ToString(reader["strucak"]);
+                a.opis = (string)Convert.ToString(reader["opis"]);
 
                 podaci.Add(a);
 

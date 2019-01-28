@@ -34,6 +34,7 @@ namespace WindowsFormsApp2
             dt.Columns.Add("Vrijeme");
             dt.Columns.Add("Strucak");
             dt.Columns.Add("Klobuk");
+            dt.Columns.Add("Opis");
 
             gljiva = GljivaClass.dohvati();
 
@@ -47,12 +48,14 @@ namespace WindowsFormsApp2
                 row["Vrijeme"] = Convert.ToString(a.Vrijeme_branja);
                 row["Strucak"] = Convert.ToString(a.Strucak);
                 row["Klobuk"] = Convert.ToString(a.Klobuk);
+                row["Opis"] = Convert.ToString(a.opis);
 
-                dt.Rows.Add(a.naziv, a.Boja, a.Mjesto_branja, a.Vrijeme_branja, a.Strucak, a.Klobuk);
+                dt.Rows.Add(a.naziv, a.Boja, a.Mjesto_branja, a.Vrijeme_branja, a.Strucak, a.Klobuk,a.opis);
 
             }
             dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
 
         }
 
@@ -102,9 +105,44 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Pretragaff a = new Pretragaff();
-            this.Hide();
-            a.ShowDialog();
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Naziv");
+            dt.Columns.Add("Boja");
+            dt.Columns.Add("Mjesto branja");
+            dt.Columns.Add("Vrijeme");
+            dt.Columns.Add("Strucak");
+            dt.Columns.Add("Klobuk");
+
+            gljiva = GljivaClass.dohvati();
+
+            foreach (var a in gljiva)
+            {
+                var row = dt.NewRow();
+
+                row["Naziv"] = Convert.ToString(a.naziv);
+                row["Boja"] = Convert.ToString(a.Boja);
+                row["Mjesto branja"] = Convert.ToString(a.Mjesto_branja);
+                row["Vrijeme"] = Convert.ToString(a.Vrijeme_branja);
+                row["Strucak"] = Convert.ToString(a.Strucak);
+                row["Klobuk"] = Convert.ToString(a.Klobuk);
+                row["Opis"] = Convert.ToString(a.opis);
+
+                dt.Rows.Add(a.naziv, a.Boja, a.Mjesto_branja, a.Vrijeme_branja, a.Strucak, a.Klobuk,a.opis);
+                dataGridView1.Rows[6].Visible = false;
+
+            }
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        
+
+            if (dt.Rows[0][0].ToString() == "1") //provjera ako se username i password poklapaju podatcima u bazi
+            {
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            }
+         
         }
 
         private void PretragaForm_Load(object sender, EventArgs e)
@@ -114,6 +152,24 @@ namespace WindowsFormsApp2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Klobuk = '{0}'", comboBox2.SelectedItem.ToString());
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Boja = '{0}'", comboBox1.SelectedItem.ToString());
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Strucak = '{0}'", comboBox3.SelectedItem.ToString());
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            DataGridViewRow selected = dataGridView1.Rows[index];
+            richTextBox1.Text = selected.Cells[6].Value.ToString();
 
         }
 
